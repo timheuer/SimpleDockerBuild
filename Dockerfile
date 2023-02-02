@@ -2,6 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
 EXPOSE 80
 EXPOSE 443
 
